@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dear Aqila ♡</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #080b18;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <iframe
+        id="storyFrame"
+        src="index.html"
+        title="Dear Aqila">
+    </iframe>
+
+    <audio id="bgMusic" loop preload="auto">
+        <source src="assets/music/dearaqila.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const music = document.getElementById("bgMusic");
+        const storyFrame = document.getElementById("storyFrame");
+
+        music.volume = 0.35;
+
+        window.addEventListener("message", function (event) {
+
+            if (event.data && event.data.action === "startStory") {
+
+                // Mulai musik
+                music.play().catch(error => {
+                    console.log("Musik belum dapat diputar:", error);
+                });
+
+                // Pindah ke halaman pertama
+                storyFrame.src = "page1.html";
+            }
+
+        });
+    </script>
+
+</body>
+</html>

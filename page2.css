@@ -1,0 +1,1109 @@
+
+/* =========================================
+   DEAR AQILA — PAGE 2
+   Before I Knew You
+========================================= */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 20%,
+            #25243e 0%,
+            #17172d 45%,
+            #0b0d1c 100%
+        );
+
+    color: #eee8f0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.9;
+}
+
+/* =========================================
+   BACKGROUND STARS
+========================================= */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, #ffffff 98%, transparent),
+        radial-gradient(1px 1px at 100px 150px, #ffffff 98%, transparent),
+        radial-gradient(2px 2px at 200px 80px, #f8d8e8 98%, transparent),
+        radial-gradient(1px 1px at 300px 250px, #ffffff 98%, transparent),
+        radial-gradient(2px 2px at 400px 120px, #ffffff 98%, transparent),
+        radial-gradient(1px 1px at 500px 300px, #f8d8e8 98%, transparent),
+        radial-gradient(2px 2px at 600px 180px, #ffffff 98%, transparent),
+        radial-gradient(1px 1px at 700px 50px, #ffffff 98%, transparent);
+
+    background-size: 750px 400px;
+    animation: starTwinkle 5s ease-in-out infinite alternate;
+    opacity: 0.65;
+}
+
+.stars::before,
+.stars::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.stars::before {
+    background-image:
+        radial-gradient(1px 1px at 50px 100px, #ffffff 98%, transparent),
+        radial-gradient(2px 2px at 180px 300px, #f5c5dd 98%, transparent),
+        radial-gradient(1px 1px at 350px 60px, #ffffff 98%, transparent),
+        radial-gradient(2px 2px at 550px 220px, #ffffff 98%, transparent),
+        radial-gradient(1px 1px at 650px 350px, #ffffff 98%, transparent);
+
+    background-size: 650px 400px;
+    animation: starTwinkle 7s ease-in-out infinite alternate-reverse;
+    opacity: 0.5;
+}
+
+.stars::after {
+    background-image:
+        radial-gradient(1px 1px at 80px 250px, #ffffff 98%, transparent),
+        radial-gradient(2px 2px at 250px 170px, #f5c5dd 98%, transparent),
+        radial-gradient(1px 1px at 450px 350px, #ffffff 98%, transparent),
+        radial-gradient(2px 2px at 700px 120px, #ffffff 98%, transparent);
+
+    background-size: 800px 450px;
+    animation: starTwinkle 4s ease-in-out infinite alternate;
+    opacity: 0.4;
+}
+
+@keyframes starTwinkle {
+    from {
+        opacity: 0.2;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0.85;
+        transform: translateY(-5px);
+    }
+}
+
+/* =========================================
+   AMBIENT LIGHT
+========================================= */
+
+.ambient {
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(110px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.12;
+}
+
+.ambient-one {
+    top: 10%;
+    left: -150px;
+    background: #b86bba;
+}
+
+.ambient-two {
+    bottom: 5%;
+    right: -150px;
+    background: #d77baf;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.page-container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 85px 30px 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================================
+   TOP LABEL
+========================================= */
+
+.top-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    color: #e5a7c5;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 5px;
+
+    animation: fadeUp 1s ease both;
+}
+
+.top-label .line {
+    display: block;
+    width: 42px;
+    height: 1px;
+    background: #bd83a6;
+    opacity: 0.7;
+}
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.eyebrow {
+    margin-top: 32px;
+
+    color: #a9a3b9;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-align: center;
+
+    animation: fadeUp 1.2s ease both;
+}
+
+/* =========================================
+   MAIN TITLE
+========================================= */
+
+.main-title {
+    margin-top: 25px;
+
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(48px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 1.15;
+    text-align: center;
+    color: #f8edf4;
+
+    animation: fadeUp 1.4s ease both;
+}
+
+.main-title span {
+    display: block;
+
+    margin-top: -2px;
+
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(75px, 10vw, 115px);
+    font-weight: 400;
+    color: #e9a0c0;
+    line-height: 1.1;
+}
+
+/* =========================================
+   HEART DIVIDER
+========================================= */
+
+.heart-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    margin: 55px 0 48px;
+
+    color: #e6a1c1;
+    animation: fadeUp 1.6s ease both;
+}
+
+.heart-divider span {
+    width: 75px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #d99bb8
+    );
+}
+
+.heart-divider span:last-child {
+    background: linear-gradient(
+        90deg,
+        #d99bb8,
+        transparent
+    );
+}
+
+.heart-divider div {
+    font-size: 24px;
+    line-height: 1;
+    animation: heartbeat 2.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+/* =========================================
+   LETTER CARD
+========================================= */
+
+.letter-card {
+    position: relative;
+
+    width: 100%;
+    max-width: 875px;
+
+    padding: 60px 80px 55px;
+
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(229, 176, 205, 0.18);
+    border-radius: 5px;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    animation: cardAppear 1.4s ease both;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CARD DECORATION */
+
+.card-decoration {
+    position: absolute;
+    top: 22px;
+    right: 30px;
+
+    color: #d99abb;
+    font-size: 22px;
+
+    animation: decorationGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes decorationGlow {
+    from {
+        opacity: 0.4;
+        transform: rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(25deg);
+    }
+}
+
+/* =========================================
+   GREETING
+========================================= */
+
+.greeting {
+    margin-bottom: 35px;
+
+    font-family: 'DM Serif Display', serif;
+    font-size: 21px;
+    font-style: italic;
+    font-weight: 400;
+
+    color: #e8a6c4;
+    line-height: 1.6;
+}
+
+/* =========================================
+   LETTER CONTENT
+========================================= */
+
+.letter-content {
+    color: #c5c0d0;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 2.15;
+    text-align: left;
+}
+
+.letter-content p {
+    margin-bottom: 28px;
+}
+
+.letter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* HIGHLIGHT TEXT */
+
+.highlight-text {
+    color: #e9a7c5;
+    font-family: 'DM Serif Display', serif;
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.9;
+
+    padding-left: 18px;
+    border-left: 2px solid #d98db3;
+}
+
+/* =========================================
+   SIGNATURE
+========================================= */
+
+.signature {
+    margin-top: 50px;
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(225, 170, 200, 0.16);
+
+    text-align: right;
+}
+
+.signature span {
+    color: #aaa4b8;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.signature h2 {
+    margin-top: 8px;
+
+    font-family: 'Great Vibes', cursive;
+    font-size: 38px;
+    font-weight: 400;
+
+    color: #e9a0c0;
+}
+
+/* =========================================
+   BOTTOM SECTION
+========================================= */
+
+.bottom-section {
+    width: 100%;
+    max-width: 700px;
+
+    margin-top: 65px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    animation: fadeUp 1.8s ease both;
+}
+
+/* =========================================
+   CLOSING TEXT
+========================================= */
+
+.closing-text {
+    width: 100%;
+    max-width: 600px;
+
+    color: #b9b2c5 !important;
+
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 15px !important;
+    font-style: italic !important;
+    font-weight: 300 !important;
+
+    line-height: 1.9;
+    letter-spacing: 0.2px;
+
+    text-align: center;
+    margin: 0 auto;
+
+    animation: fadeUp 1.8s ease both;
+}
+
+/* =========================================
+   CONTINUE LABEL
+========================================= */
+
+.continue-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    margin: 40px 0 30px;
+
+    color: #d99bb9;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.continue-line {
+    display: block;
+    width: 35px;
+    height: 1px;
+    background: rgba(217, 155, 185, 0.55);
+}
+
+/* =========================================
+   NEXT BUTTON
+========================================= */
+
+.next-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 15px 30px;
+
+    border: 1px solid rgba(230, 164, 196, 0.65);
+    border-radius: 50px;
+
+    background: rgba(224, 151, 187, 0.08);
+
+    color: #f0bfd5;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.next-button:hover {
+    background: rgba(224, 151, 187, 0.2);
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 30px rgba(217, 139, 177, 0.15);
+}
+
+.next-button .arrow {
+    font-size: 19px;
+    transition: transform 0.3s ease;
+}
+
+.next-button:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* =========================================
+   BACK LINK
+========================================= */
+
+.back-link {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    color: #aaa3b7;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.back-link:hover {
+    color: #e8a5c4;
+    transform: translateX(-3px);
+}
+
+/* =========================================
+   PAGE NUMBER
+========================================= */
+
+.page-number {
+    margin-top: 65px;
+
+    color: rgba(224, 174, 202, 0.45);
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+    .page-container {
+        padding: 65px 22px 45px;
+    }
+
+    .top-label {
+        font-size: 10px;
+        letter-spacing: 4px;
+    }
+
+    .top-label .line {
+        width: 30px;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .main-title {
+        font-size: 55px;
+    }
+
+    .main-title span {
+        font-size: 85px;
+    }
+
+    .heart-divider {
+        margin: 40px 0 35px;
+    }
+
+    .letter-card {
+        padding: 45px 40px;
+    }
+
+    .greeting {
+        font-size: 19px;
+    }
+
+    .letter-content {
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    .highlight-text {
+        font-size: 18px;
+    }
+
+    .closing-text {
+        font-size: 14px !important;
+    }
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .page-container {
+        padding: 50px 17px 35px;
+    }
+
+    .top-label {
+        gap: 10px;
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .top-label .line {
+        width: 24px;
+    }
+
+    .eyebrow {
+        margin-top: 25px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .main-title {
+        margin-top: 20px;
+        font-size: 42px;
+    }
+
+    .main-title span {
+        font-size: 72px;
+    }
+
+    .heart-divider {
+        margin: 35px 0 30px;
+        gap: 12px;
+    }
+
+    .heart-divider span {
+        width: 45px;
+    }
+
+    .letter-card {
+        padding: 38px 24px 35px;
+    }
+
+    .card-decoration {
+        top: 15px;
+        right: 18px;
+        font-size: 18px;
+    }
+
+    .greeting {
+        margin-bottom: 25px;
+        font-size: 17px;
+    }
+
+    .letter-content {
+        font-size: 13px;
+        line-height: 2;
+        text-align: left;
+    }
+
+    .letter-content p {
+        margin-bottom: 23px;
+    }
+
+    .highlight-text {
+        padding-left: 13px;
+        font-size: 17px;
+    }
+
+    .signature {
+        margin-top: 35px;
+        padding-top: 25px;
+    }
+
+    .signature span {
+        font-size: 11px;
+    }
+
+    .signature h2 {
+        font-size: 32px;
+    }
+
+    .bottom-section {
+        margin-top: 45px;
+    }
+
+    .closing-text {
+        width: 100%;
+        max-width: 100%;
+
+        color: #b9b2c5 !important;
+
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 13px !important;
+        font-style: italic !important;
+        font-weight: 300 !important;
+
+        line-height: 1.8;
+        letter-spacing: 0.2px;
+
+        text-align: center;
+    }
+
+    .continue-label {
+        gap: 10px;
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .continue-line {
+        width: 22px;
+    }
+
+    .next-button {
+        padding: 13px 24px;
+        font-size: 12px;
+    }
+
+    .back-link {
+        font-size: 11px;
+    }
+
+    .page-number {
+        margin-top: 50px;
+    }
+}
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================
+   FINAL OVERRIDE — PAGE 2
+   Menyamakan ukuran dengan PAGE 1
+========================================= */
+
+/* Container utama */
+.page-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 65px 25px 45px;
+    box-sizing: border-box;
+}
+
+/* Chapter */
+.top-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    gap: 16px;
+}
+
+.top-label .line {
+    width: 38px;
+}
+
+/* Subtitle */
+.eyebrow {
+    margin-top: 25px;
+    font-size: 11px;
+    letter-spacing: 2.3px;
+}
+
+/* Judul */
+.main-title {
+    margin-top: 20px;
+    font-size: 68px;
+    line-height: 1.05;
+}
+
+.main-title span {
+    display: block;
+    font-size: 92px;
+    line-height: 1.05;
+    margin-top: -2px;
+}
+
+/* Pemisah hati */
+.heart-divider {
+    margin: 35px 0 38px;
+    gap: 15px;
+}
+
+.heart-divider span {
+    width: 55px;
+}
+
+.heart-divider div {
+    font-size: 20px;
+}
+
+/* Card cerita */
+.letter-card {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 45px 65px;
+    box-sizing: border-box;
+}
+
+/* Dekorasi card */
+.card-decoration {
+    top: 18px;
+    right: 25px;
+    font-size: 19px;
+}
+
+/* Greeting */
+.greeting {
+    font-size: 18px;
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+/* Isi cerita */
+.letter-content {
+    font-size: 13px;
+    line-height: 2;
+}
+
+.letter-content p {
+    margin-bottom: 22px;
+}
+
+/* Highlight */
+.highlight-text {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Signature */
+.signature {
+    margin-top: 35px;
+    padding-top: 22px;
+}
+
+.signature span {
+    font-size: 12px;
+}
+
+.signature h2 {
+    font-size: 32px;
+}
+
+/* Bagian bawah */
+.bottom-section {
+    width: 100%;
+    max-width: 650px;
+    margin: 45px auto 0;
+}
+
+/* Closing */
+.closing-text {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px !important;
+    font-style: italic !important;
+    font-weight: 300 !important;
+
+    line-height: 1.9;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+
+/* Continue */
+.continue-label {
+    margin: 30px 0 25px;
+}
+
+/* Nomor halaman */
+.page-number {
+    margin-top: 45px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+    .page-container {
+        padding: 50px 22px 40px;
+    }
+
+    .main-title {
+        font-size: 52px;
+    }
+
+    .main-title span {
+        font-size: 76px;
+    }
+
+    .letter-card {
+        max-width: 100%;
+        padding: 38px 32px;
+    }
+
+    .greeting {
+        font-size: 17px;
+    }
+
+    .letter-content {
+        font-size: 13px;
+        line-height: 1.95;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .page-container {
+        padding: 42px 17px 35px;
+    }
+
+    .top-label {
+        font-size: 9px;
+        letter-spacing: 3px;
+        gap: 10px;
+    }
+
+    .top-label .line {
+        width: 25px;
+    }
+
+    .eyebrow {
+        margin-top: 20px;
+        font-size: 10px;
+    }
+
+    .main-title {
+        font-size: 39px;
+    }
+
+    .main-title span {
+        font-size: 65px;
+    }
+
+    .heart-divider {
+        margin: 28px 0 32px;
+    }
+
+    .heart-divider span {
+        width: 42px;
+    }
+
+    .letter-card {
+        padding: 32px 22px;
+    }
+
+    .greeting {
+        font-size: 15px;
+    }
+
+    .letter-content {
+        font-size: 12px;
+        line-height: 1.9;
+    }
+
+    .letter-content p {
+        margin-bottom: 20px;
+    }
+
+    .highlight-text {
+        font-size: 15px;
+    }
+
+    .signature h2 {
+        font-size: 28px;
+    }
+
+    .bottom-section {
+        margin-top: 35px;
+    }
+
+    .closing-text {
+        font-size: 13px !important;
+        line-height: 1.8;
+    }
+
+    .page-number {
+        margin-top: 40px;
+    }
+}
+
+
+/* =========================================
+   FINAL FIX — NEXT BUTTON PAGE 2
+========================================= */
+
+.bottom-section .next-button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    padding: 15px 27px !important;
+
+    background-color: #e8a9c1 !important;
+    background-image: none !important;
+
+    color: #080d1b !important;
+
+    border: 1px solid #e8a9c1 !important;
+    border-radius: 2px !important;
+
+    text-decoration: none !important;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    box-shadow: none;
+
+    transition: 0.35s ease;
+}
+
+.bottom-section .next-button span {
+    color: #080d1b !important;
+    text-decoration: none !important;
+}
+
+.bottom-section .next-button:hover {
+    background-color: transparent !important;
+    background-image: none !important;
+
+    color: #e8a9c1 !important;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 30px rgba(232, 169, 193, 0.12);
+}
+
+.bottom-section .next-button:hover span {
+    color: #e8a9c1 !important;
+}
+
+.bottom-section .next-button .arrow {
+    font-size: 17px;
+    transition: transform 0.3s ease;
+}
+
+.bottom-section .next-button:hover .arrow {
+    transform: translateX(5px);
+}
+

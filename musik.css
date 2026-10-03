@@ -1,0 +1,149 @@
+
+/* =====================================
+   DEAR AQILA — MUSIC PLAYER
+===================================== */
+
+.music-player {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 17px;
+
+    background: rgba(17, 19, 38, 0.88);
+    border: 1px solid rgba(232, 169, 193, 0.3);
+    border-radius: 50px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.25);
+
+    color: #f8edf2;
+    font-family: 'Montserrat', sans-serif;
+
+    transition: 0.3s ease;
+}
+
+.music-player:hover {
+    border-color: #e8a9c1;
+    transform: translateY(-3px);
+}
+
+.music-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(232, 169, 193, 0.15);
+    border-radius: 50%;
+
+    color: #e8a9c1;
+    font-size: 16px;
+}
+
+.music-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.music-title {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: #f8edf2;
+}
+
+.music-status {
+    font-size: 9px;
+    color: #b9b4c4;
+}
+
+.music-toggle {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(232, 169, 193, 0.5);
+    border-radius: 50%;
+
+    background: #e8a9c1;
+    color: #080d1b;
+
+    font-size: 14px;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.music-toggle:hover {
+    background: transparent;
+    color: #e8a9c1;
+    transform: scale(1.08);
+}
+
+.music-player.is-playing .music-icon {
+    animation: musicPulse 2s infinite ease-in-out;
+}
+
+@keyframes musicPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 rgba(232, 169, 193, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 15px rgba(232, 169, 193, 0.35);
+    }
+}
+
+/* Pemutar YouTube disembunyikan secara visual */
+
+#youtube-player-container {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .music-player {
+        right: 15px;
+        bottom: 15px;
+        padding: 9px 12px;
+        gap: 9px;
+    }
+
+    .music-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .music-title {
+        font-size: 9px;
+    }
+
+    .music-status {
+        font-size: 8px;
+    }
+
+    .music-toggle {
+        width: 32px;
+        height: 32px;
+    }
+}
