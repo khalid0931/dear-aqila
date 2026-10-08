@@ -1,0 +1,123 @@
+/* =========================================
+   PAGE 08 — FINAL PAGE
+   Tentang Akhir, Yang Mungkin Bukan
+   Benar-Benar Akhir
+========================================= */
+
+.page-container {
+    padding-top: 75px;
+    padding-bottom: 60px;
+}
+
+.main-title {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.letter-card {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.letter-content p {
+    line-height: 2.2;
+    margin-bottom: 22px;
+}
+
+/* Highlight bagian akhir */
+
+.letter-content .ending-highlight {
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+    font-family: "DM Serif Display", serif;
+    font-size: 20px;
+    font-style: italic;
+
+    line-height: 1.8;
+    text-align: center;
+
+    color: var(--pink-light);
+}
+
+/* Kalimat penutup */
+
+.letter-content .ending-final {
+    margin-top: 30px;
+
+    font-family: "DM Serif Display", serif;
+    font-size: 18px;
+    font-style: italic;
+
+    line-height: 2;
+    text-align: center;
+
+    color: var(--pink-light);
+}
+
+/* Signature */
+
+.signature {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;
+    text-align: right;
+}
+
+.signature span,
+.signature h2 {
+    width: 100%;
+    text-align: right;
+}
+
+/* Bottom */
+
+.bottom-section {
+    margin-top: 50px;
+}
+
+/* Tombol kembali dibuat terasa seperti ending */
+
+.next-button {
+    margin-top: 25px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .page-container {
+        padding: 55px 18px 40px;
+    }
+
+    .letter-card {
+        padding: 38px 25px;
+    }
+
+    .letter-content p {
+        font-size: 12px;
+        line-height: 2;
+    }
+
+    .letter-content .ending-highlight {
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .letter-content .ending-final {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .signature h2 {
+        font-size: 30px;
+    }
+
+    .bottom-section {
+        margin-top: 40px;
+    }
+}
